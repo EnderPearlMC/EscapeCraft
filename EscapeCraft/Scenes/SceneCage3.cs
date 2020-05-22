@@ -17,7 +17,7 @@ namespace EscapeCraft.Scenes
 
         public SceneCage3(Main main) : base("cage_3", main)
         {
-            fileScene = new CEASceneFileInterpreter(Path.Combine("D:/jeux/EscapeCraft/EscapeCraft/EscapeCraft/EscapeCraft/Scenes/", "scene_cage_3.scn"), Assets.MainFont, main);
+            fileScene = new CEASceneFileInterpreter(Path.Combine(References.SCENES_FOLDER, "scene_cage_3.scn"), Assets.MainFont, main);
         }
 
         public override void Load(Dictionary<string, object> parameters)
