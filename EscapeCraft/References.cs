@@ -10,6 +10,7 @@ namespace EscapeCraft
     {
 
         public static string DATAS_FOLDER = "EscapeCraft";
+        public static string SCENES_FOLDER = "D:/jeux/EscapeCraft/EscapeCraft/EscapeCraft/EscapeCraft/Scenes/";
 
     }
 }
