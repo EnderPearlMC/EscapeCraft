@@ -1,0 +1,31 @@
+﻿
+// ==============
+//	Hall 1
+// ==============
+
+
+// =================================================== //
+//													   //
+//						  IMAGES					   //
+//													   //
+// =================================================== //
+
+
+// background
+Image : scene_hall_1 / x = 0 / y = 0 / width = 1 / height = 1
+
+
+// =================================================== //
+//													   //
+//					  TRAVEL ZONES			           //
+//													   //
+// =================================================== //
+
+// Go to scene_chestroom
+TravelZone : "Ouvrir la porte" / x = w/9 / y = h/3 / width = 9 / height = 3 / idtogo = cage_4 / cursor = cursor_step
+
+// Go to scene_spawner
+TravelZone : "Ouvrir la porte" / x = w/1.2 / y = h/3 / width = 9 / height = 3 / idtogo = cage_4 / cursor = cursor_step
+
+// Go to scene_hall_craft
+TravelZone : "Crafter" / x = w/4 / y = h/2.5 / width = 9 / height = 5 / idtogo = cage_4 / cursor = cursor_eye

@@ -30,8 +30,6 @@ namespace CodeEasierAdventure
 
     interface ICEASceneObject
     {
-        
-        bool ToRemove { get; set; }
 
         void Load();
         void Update(GameTime gameTime);

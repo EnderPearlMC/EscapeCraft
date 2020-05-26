@@ -38,7 +38,7 @@ namespace CodeEasierAdventure
         public void Update(MouseState newMouseState, MouseState oldMouseState)
         {
 
-            if (Rect.Contains(newMouseState.X, newMouseState.Y))
+            if (Rect.Contains(newMouseState.X, newMouseState.Y) && !BaseGame.game.Inventory.IsHovered)
             {
                 IsHovered = true;
                 BaseGame.game.ShowSpecialCursor = true;
@@ -47,9 +47,10 @@ namespace CodeEasierAdventure
 
                 if (newMouseState.LeftButton == ButtonState.Pressed && oldMouseState.LeftButton == ButtonState.Released)
                 {
+                    BaseGame.game.ChangeScene(IdToGo, BaseGame.game.Player.ScenesState[IdToGo]);
+                    BaseGame.game.Player.ScenesState[BaseGame.game.Player.Level] = BaseGame.game.Scenes.Find(item => item.Identifier == BaseGame.game.Player.Level).State;
                     BaseGame.game.Player.Level = IdToGo;
                     DataManager.WriteFile("player.json", BaseGame.game.Player);
-                    BaseGame.game.ChangeScene(IdToGo);
                     BaseGame.game.ShowSpecialCursor = false;
                 }
             }

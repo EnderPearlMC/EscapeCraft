@@ -46,6 +46,7 @@ namespace CodeEasier.Scene
          */
 
         public string Identifier { get; private set; }
+        public Dictionary<string, Object> State { get; set; }
         public Main BaseGame { get; private set; }
         public List<ICESceneDrawable> Drawables { get; private set; }
 
@@ -111,6 +112,14 @@ namespace CodeEasier.Scene
             {
                 drawable.Draw(BaseGame.spriteBatch);
             }
+        }
+
+        /**
+        *  The quit event method of the scene
+        */
+        public virtual void OnQuit()
+        {
+
         }
 
         /*

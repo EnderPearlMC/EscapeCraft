@@ -1,6 +1,6 @@
 ﻿
 // ==============
-//	Cage 3
+//	Cage 4
 // ==============
 
 
@@ -12,7 +12,7 @@
 
 
 // background
-Image : scene_cage_3 / x = 0 / y = 0 / width = 1 / height = 1
+Image : scene_cage_4 / x = 0 / y = 0 / width = 1 / height = 1
 
 
 // =================================================== //
@@ -21,5 +21,5 @@ Image : scene_cage_3 / x = 0 / y = 0 / width = 1 / height = 1
 //													   //
 // =================================================== //
 
-// Go back to scene_cage_1
-TravelZone : "Revenir en arriere" / x = 0 / y = h/1.18 / width = 1 / height = 1 / idtogo = cage_1 / cursor = cursor_step
+// Go to scene_hall_1
+TravelZone : "S'aventurer" / x = 0 / y = h/5 / width = 1 / height = 2 / idtogo = hall_1 / cursor = cursor_step

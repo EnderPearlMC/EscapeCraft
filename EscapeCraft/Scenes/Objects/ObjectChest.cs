@@ -15,15 +15,19 @@ namespace EscapeCraft.Scenes.Objects
     {
 
         public CEImageElement Image { get; set; }
+        public Texture2D TNormal { get; set; }
+        public Texture2D TOpen { get; set; }
         public Main BaseGame { get; set; }
 
         public bool IsOpen { get; set; }
 
         public MouseState oldMouseState;
 
-        public ObjectChest(Main baseGame)
+        public ObjectChest(Texture2D normal, Texture2D open, Main baseGame)
         {
-            Image = new CEImageElement(Assets.Chest1, new Rectangle(0, 0, 0, 0));
+            TNormal = normal;
+            TOpen = open;
+            Image = new CEImageElement(TNormal, new Rectangle(0, 0, 0, 0));
             BaseGame = baseGame;
         }
 
@@ -38,11 +42,11 @@ namespace EscapeCraft.Scenes.Objects
 
             if (!IsOpen)
             {
-                Image.Texture = Assets.Chest1;
+                Image.Texture = TNormal;
             }
             else
             {
-                Image.Texture = Assets.Chest1Open;
+                Image.Texture = TOpen;
             }
 
             if (Image.Rect.Contains(newMousteState.Position))

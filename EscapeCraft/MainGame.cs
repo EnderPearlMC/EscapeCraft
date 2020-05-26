@@ -30,12 +30,15 @@ namespace EscapeCraft
         {
 
             // Inventory
-            Inventory = new CEAInventory(8, Assets.InventoryCase);
+            Inventory = new CEAInventory(8, Assets.InventoryCase, Assets.SelectedInventoryCase, BaseGame);
 
             // Add scenes
             AddScene(new SceneCage1(BaseGame));
             AddScene(new SceneCage2(BaseGame));
             AddScene(new SceneCage3(BaseGame));
+            AddScene(new SceneCage4(BaseGame));
+
+            AddScene(new SceneHall1(BaseGame));
 
             // File
 
@@ -49,9 +52,9 @@ namespace EscapeCraft
                 Player = DataManager.ReadFile<Player>("player.json");
             }
 
-            foreach (string i in Player.Inventory)
+            foreach (KeyValuePair<string, int> item in Player.Inventory)
             {
-                Inventory.Items.Add(FindItemWithId(i));
+                Inventory.Items.Add(FindItemWithId(item.Key), item.Value);
             }
 
             ChangeScene(Player.Level, Player.ScenesState[Player.Level]);
@@ -87,6 +90,10 @@ namespace EscapeCraft
             {
                 case "book_1":
                     item = new ItemBook1();
+                    break;
+
+                case "gold_block":
+                    item = new ItemGoldBlock();
                     break;
 
                 default:

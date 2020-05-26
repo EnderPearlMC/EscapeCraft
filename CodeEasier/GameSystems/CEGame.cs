@@ -229,6 +229,11 @@ namespace CodeEasier.GameSystems
                 if (scene.Identifier == identifier && !sceneFound)
                 {
 
+                    if (CurrentScene != null)
+                    {
+                        CurrentScene.OnQuit();
+                    }
+
                     sceneFound = true;
 
                     CurrentScene = scene;
